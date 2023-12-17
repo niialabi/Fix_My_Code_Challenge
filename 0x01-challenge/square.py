@@ -24,14 +24,24 @@ class Square():
         self.width = width
         self.height = height
 
+    @property
+    def width(self):
+        return self._width
+
+    @property
+    def height(self):
+        return self._height
+
     def area_of_my_square(self):
         """ Area of the square """
         return self.width * self.width
 
     def PerimeterOfMySquare(self):
+        """ calculates perimeter of square """
         return (self.width * 2) + (self.height * 2)
 
     def __str__(self):
+        """ outputs formated string representation of class """
         return "{}/{}".format(self.width, self.height)
 
 
