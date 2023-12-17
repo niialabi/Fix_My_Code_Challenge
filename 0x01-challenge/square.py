@@ -1,19 +1,14 @@
 #!/usr/bin/python3
-""" Module containing Square class """
-
 
 class Square():
-    """ square class """
+    
+    width = 0
+    height = 0
 
+    
     def __init__(self, *args, **kwargs):
-        width = kwargs.get("width", 0)
-        height = kwargs.get("height", 0)
-
-        if width != height:
-            raise ValueError("Width and height must be equal.")
-
-        self.width = width
-        self.height = height
+        for key, value in kwargs.items():
+            setattr(self, key, value)
 
     def area_of_my_square(self):
         """ Area of the square """
@@ -24,7 +19,6 @@ class Square():
 
     def __str__(self):
         return "{}/{}".format(self.width, self.height)
-
 
 if __name__ == "__main__":
 
